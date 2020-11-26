@@ -24,6 +24,8 @@ jobs:
       run:  docker run bib ls data
     - name: bibetextmake
       run: docker run -v ${PWD}:/data bib sh ./data/publist.sh
+    - name: csvmake
+      run: docker run -v ${PWD}:/data sh xlsx2csv ActivityOverview.xls ActivityOverview.csv
     - name: commit
       run: ls -la _includes
     - name: Commit files
