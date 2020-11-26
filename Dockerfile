@@ -6,5 +6,5 @@ RUN apt install -y bibtex2html xslx2csv
 RUN rm -rf /var/lib/apt/lists/*
 ADD . /data
 RUN sh /data/publist.sh
-RUN sh xlsx2csv /data/_data/ActivitiesOverview.xlsx /data/_data/ActivitiesOverview.csv
+RUN sh xlsx2csv /data/ActivitiesOverview.xlsx /data/ActivitiesOverview.csv
 CMD bash
