@@ -9,7 +9,7 @@ Start date,End date,Type,Topic,Student,Supervisor,Progress,Link,Status
 10/19/2020,,BA,Hardware Aware Pruning auf OpenVino,J. Westra,AW,Erstmeeting nächste 12.11,,Started
 11/3/2020,,BA,Hardware Aware Pruning with Slimmable Networks,K Knoth,AW,Arbeit noch nicht in TISS,,Started
 2020-02-xx,,MA,Quantization,D. Dallinger,MW,Fast fertig,,Started
-2020-02-xx,,MA,Pruning,A. Glinserer,ML,Fast fertig,,Started
+2020-02-xx,,MA,Pruning,A. Glinserer,ML,Almost completed,,Started
 2020-11-xx,,BA,Ursprüngliches Thema: Knowledge Distillation,N. Alge,?,Neues Thema notwendig,,Not started
 11/3/2020,,N/A,Power and Latency Optimization of the Xilinx ZCU102 Platform for a Pedestrian Intention Recognition Use Case,M. Wuschnig,MW,Aufgabe nach dem Reportprotokoll,,Not started
 11/3/2020,,Sem,Tensorflow an Handy,T. Kotrba,AW,Tensorflow Lite an einem Android bringen und Netze trainieren,,Not started
