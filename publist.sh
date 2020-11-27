@@ -2,12 +2,11 @@
 
 baseDir=/data
 
-# Publication list:
+# Publication list source:
 bibsrc=$baseDir/PublFiles/eml.bib
-htmlpublist=$baseDir/_includes/publist.html
 
-# Building the publication list from the file lit.bib
-# It takes those entries with key={eml}
+# Publication list target in html format:
+htmlpublist=$baseDir/_includes/publist.html
 
 cd $baseDir
 
@@ -26,10 +25,6 @@ then
     exit 2;
 fi
 
-# bib2bib -q -c 'key : "eml"' $bibsrc | bibtex2html -q -nodoc -nokeywords -nofooter  \
-#     | sed -e 's/<p>//' > $htmlpublist
-      # bib2bib generates spurious and incorrect <p>  tags when there is an abstract in the bib entry,
-      # which we filter out here.
 
 bibtex2html -q -nodoc -nokeywords -nofooter -o - $bibsrc  \
     | sed -e 's/<p>//' > $htmlpublist
