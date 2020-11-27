@@ -1,12 +1,21 @@
 #!/bin/sh
 
-baseDir=/data
+#baseDir=/data
+baseDir=./
 
-# Publication list source:
+# Publication lists:
+# All entries:
 bibsrc=$baseDir/PublFiles/eml.bib
+bibArticles=$baseDir/PublFiles/emlArticles.bib
+bibConferences=$baseDir/PublFiles/emlConferences.bib
+bibPresentations=$baseDir/PublFiles/emlPresentations.bib
 
-# Publication list target in html format:
-htmlpublist=$baseDir/_includes/publist.html
+
+# Publication list targets in html format:
+htmlArticles=$baseDir/_includes/publistArticles.html
+htmlConferences=$baseDir/_includes/publistConferences.html
+htmlPresentations=$baseDir/_includes/publistPresentations.html
+
 
 cd $baseDir
 
@@ -25,10 +34,23 @@ then
     exit 2;
 fi
 
+###########################
+#
+# Generating seperate bib files for journals, conferences and presentations:
+#
+##########################
 
-bibtex2html -q -nodoc -nokeywords -nofooter -o - $bibsrc  \
-    | sed -e 's/<p>//' > $htmlpublist
+bib2bib -q -c '$type = "article"' $bibsrc > $bibArticles 
+bib2bib -q -c '$type = "inproceedings"' $bibsrc > $bibConferences 
+bib2bib -q -c '$type = "misc" and $key : "presentation"' $bibsrc > $bibPresentations 
+
+bibtex2html -q --no-abstract --sort-by-date --reverse-sort -nodoc -nokeywords -nofooter -o - $bibArticles \
+    | sed -e 's/<p>//' > $htmlArticles
+bibtex2html -q --no-abstract --sort-by-date --reverse-sort -nodoc -nokeywords -nofooter -o - $bibConferences \
+    | sed -e 's/<p>//' > $htmlConferences
+bibtex2html -q --no-abstract --sort-by-date --reverse-sort -nodoc -nokeywords -nofooter -o - $bibPresentations \
+    | sed -e 's/<p>//' > $htmlPresentations
       # bib2bib generates spurious and incorrect <p>  tags when there is an abstract in the bib entry,
       # which we filter out here.
 
-echo "The publication list is in $htmlpublist."
+echo "The publication lists are in $htmlArticles $htmlConferences $htmlPresentations."
