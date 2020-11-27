@@ -39,3 +39,10 @@ Xilinx, Nvidia and Intel will continue to provide strong solutions for their res
 we will leverage their tools and frameworks to identify and implement the best platform-DNN
 combination for a given application problem.
 
+---
+
+<ul>
+    <li><a href="{{ site.url }}{{ site.baseurl }}/research/activities/">Activities</a></li>
+    <li><a href="{{ site.url }}{{ site.baseurl }}/research/vision/">Vision</a></li>
+    <li><a href="{{ site.url }}{{ site.baseurl }}/research/results/">Results</a></li>
+</ul>

@@ -29,3 +29,11 @@ permalink: "/research/activities/"
     
   {% endfor %}
 </table>
+
+---
+
+<ul>
+    <li><a href="{{ site.url }}{{ site.baseurl }}/research/activities/">Activities</a></li>
+    <li><a href="{{ site.url }}{{ site.baseurl }}/research/vision/">Vision</a></li>
+    <li><a href="{{ site.url }}{{ site.baseurl }}/research/results/">Results</a></li>
+</ul>
