@@ -1,271 +1,35 @@
-Compliance zu WPs CDLEML,,2019,,,,,,,,,,,,2020,,,,,,,,,,,,2021,,,,,,,,,,,,Start Date,End Date,"Weight [1,5]",Progress,Description,Status,Responsible,Student,Tasks,State,Deliverables,Links,Priority
-,,1,2,3,4,5,6,7,8,9,10,11,12,1,2,3,4,5,6,7,8,9,10,11,12,1,2,3,4,5,6,7,8,9,10,11,12,,,,%,,,,,,,,,
-,,,,,,,,,,,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,,,,,,,,,,,,,
-,Milestones,,,,,,,,,,,,,,,,,M1.1,,,,M2.1,,M1.2,,,,M2.2,,,,,,M1.3M2.3,,,,,,,,,,,,,,,,
-,Deliverables,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WP1.1,"Create estimations for lat, throughput, power, energy, acc, resources",,,,,,,,,,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,d,d,d,,,,,,,,,,,,,0.51111111111111118,Anforderung: Modelle für 4 Platformen,Meilenstein 1.1 geschafft. Throughput nicht wichtig->auslassen,,,,,,,
-WP1.1.1,State of the Art Latency und Power Estimation Modelle aufsetzen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,09-01-20,10-30-20,,1,Setup Neural Power latency and power estimation model,Finished,Marco,,,closed,None,,N/A
-,Neural Power aufsetzen mit Modell von NCS2,,,,,,,,,,,,,,,,,,,,,*,*,,,,,,,,,,,,,,,,,2,1,"Modell implementieren in beliebiger Umgebung; NeuralPower übertragbar machen (andere Umgebung?); Estimatorschnittstelle implementieren; ein Modell trainieren (Xavier, NCS2…) Demonstration der Latenzabschätzung eines Netzes; Output: Latenz","-Aufgabe wird aufgelassen, weil die Ergebnisse nicht gut sind. Schlussfolgerung: Unsere Methoden sind besser",Marco,,"[x] NCS2 messdaten modellieren
-[-] Xilinxdaten modellieren
-[-] Graphikkarte Siemensserver modellieren
-[-] Manual schreiben
-[-] Am Server aufsetzen",,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WP1.1.2,Estimatormethode Blackthorn (Martin) für Latenz (NVIDIA),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.81111111111111112,,Wie weit seid ihr? Wollen wir alle diese Plattformen machen?,ML,,,running,,,1
-,Martins latency estimator mit Modell von Xavier erstellen,,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,2,0.5,,"*Modellstruktur fertig. Übertragung auf Xavier, Messungen",ML,,"[] Messen
-[] Modell erstellen
-[] Modell übertragen",,,,
-,Martins latency estimator mit Modell von Nano erstellen,,,,,,,,,,,,,,,,,,,,,*,*,*,*,,,,,,,,,,,,,,,5,0.9,"Modell implementieren in beliebiger Umgebung; NeuralPower übertragbar machen (andere Umgebung?); Estimatorschnittstelle implementieren; ein Modell trainieren (Xavier, NCS2…) Demonstration der Latenzabschätzung eines Netzes;",*3 Layertypen fehlen,ML,,"[] 3 Layertypen neu hinzufügen, Depth Separable Convolutions +2
-[] Code aufräumen 10.12.2020
-[] In Repository stellen",,,,
-,Martins latency estimator mit Modell von TX2 erstellen,,,,,,,,,,,,,,,,,,,,,*,*,*,*,,,,,,,,,,,,,,,2,0.9,"Modell implementieren in beliebiger Umgebung; NeuralPower übertragbar machen (andere Umgebung?); Estimatorschnittstelle implementieren; ein Modell trainieren (Xavier, NCS2…) Demonstration der Latenzabschätzung eines Netzes;",*3 Layertypen fehlen,ML,,"[] 3 Layertypen neu hinzufügen
-[] Code aufräumen",,,,
-WP1.1.3,"Estimatormethode ANETTE für Latenz (Intel, ARM, Xilinx)",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.54000000000000015,,Wie weit bis du da?,MW,,,running,,,1
-,Latency Intel: ANETTE aufsetzen mit Modell von NUC erstellen,,,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,3,0.3,,,MW,,,,,,
-,Latency Xilinx: ANETTE aufsetzen mit Modell von Xilinx ZCU102 + spezielle IP erstellen,,,,,,,,,,,,,,,,,,,,,*,*,*,*,,,,,,,,,,,,,,,5,0.8,,"Modell fertig, Schnittstelle nach außen offen",MW,,"[] Schnittstelle erstellen, code cleaning",,,,
-,Latency Xilinx: ANETTE aufsetzen mit Modell von Xilinx mit Ausbaustufen der IP erweitern,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,Nicht so wichtig. Ein Xilinx reicht im Moment,,,,,,,
-,Latency Intel: ANETTE latency mit Modell von NCS2 erstellen,,,,,,,,,,,,,,,,,,,,,*,*,*,*,,,,,,,,,,,,,,,4,0.8,"Modell implementieren in beliebiger Umgebung; NeuralPower übertragbar machen (andere Umgebung?); Estimatorschnittstelle implementieren; ein Modell trainieren (Xavier, NCS2…) Demonstration der Latenzabschätzung eines Netzes; Size 1, sync modus","Fertig für sync modus, size 1. Schnittstelle nach außen offen",MW,,"[] Schnittstelle erstellen, code cleaning",,,,
-,Latency ARM: ANETTE auf Raspberry PI aufsetzen,,,,,,,,,,,,,,,,,,,,,,,,,*,*,*,,,,,,,,,,,,3,0,,,MW,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WP1.1.4,Estimation von Power durch Whitboxmodell,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.2,,Cancelled,CK,,,cancelled,,,3
-,Power Xilinx: Generelle Powerabschätzungsmodell durch Synthetisierung erstellen,,,,,,,,,,,,,,,,,,,,,*,*,*,*,,,,,,,,,,,,,,,5,0.2,"Mit Powerschätzungen erweitern. Systematisch Xilinx und Sticks durchmessen. CK: FPGA feingranulare Abschätzung der Energie. Xilinx Power Estimator, geplant technologieunabhängig, auf alle FPGAs. Technologielibrary. Kommersielle Lösungen gibt es schon","- Testbeispiel gefunden und implementieren
-- Testsetup machen, wie misst man",CK,,"[] Besprechung mit Herbert @MW
-[] HW bestellen
-[] Studentenarbeit ausschreiben
-[] Mit Multimeter oder DAQ Messung",,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WP1.1.5,Estimation von Power durch ANETTE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,MW,,,running,,,2
-,Power Xilinx: Powerschätzung von ANETTE auf Xilinx erweitern?,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,Power ARM: Powerestimation Raspberry PI,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3,0,ANETTE auf Raspberry PI erweitern. Studentenarbeit dafür verwenden,Nicht gestartet,MW,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WP1.1.6,Estimation Resources,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,ML,,,not started,,,3
-,Resourcenestimierung NVIDIA Möglichkeiten sondieren,,,,,,,,,,,,,,,,,,,,,,*,*,*,*,*,*,*,,,,,,,,,,,2,0,"Seminararbeit für Literatursuche. Praktische Studentenarbeit für die Ausführung. Untersuchung Memoryusage, Bandwidth, Verkehr zwischen Prozessor und DRAM. Wie kann das Ressourcenprofil ändern durch Parameterisierung. NVIDIA-Plattformen. nSight verwenden. Frage: Welches Netz würde für eine bestimmte HW die Resourcen maximal ausnutzen?",Nicht gestartet,ML,,"[] Studentenarbeit ausschreiben
-[] Platform mit den besten Tools auswählen
-",,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WP1.2,Optimize HW Dependent Settings,,,,,,,,,,,,,,,,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,,,,,,,,,,0.26666666666666666,Anforderung: HW Optimizations für 4 Plattformen,*NVIDIA Nano und welche noch? NCS2 wäre naheliegend. Meilenstein 1.2 50% geschafft,,,,,,,
-WP1.2.1,NVIDIA Profiling,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,03-01-20,,,0.64,"HW settings profiling of NVIDIA Xavier, Jetson Nano (Bachelor thesis) and TX2",,AW,SH,,running,,,1
-,NVIDIA Jetson Nano Hardware Profiling durchführen,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,,,,4,0.8,"Im synchronen Modus nur. Im async geht das nicht. 
-Zusatzmessungen Jetson Nano
-- Batchsize 1-4, weil sie mit einem Netz mehrere Sensorinputs gleichzeitig anschauen, Synchronbilder
-- Powerminimierung bzw. Powerkontrolle, weil es bei Nano öfters passiert ist, dass der 100W Netzteil überlastet wird und das Gerät thermisch eingeht. Stresstests wären hier interessant für die Geräte bzw. wie man so einen Zustand vermeiden kann.","*Bakarbeit fast fertig. 
-* Zusatzmessungen von ME offen",SH,,[] Bericht mit notwendigen Messungen drinnen (Bakarbeit + Zusatzmessungen),,,,
-,NVIDIA Jetson Nano Hardware Optimierung Implementierung auf Nano,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,,1,0,"Scripts implementieren, wo man Einstellungen für min Latency, min Power oder min Energy einstellen kann",,SH,,,,,,
-,NVIDIA TX2 Hardware Profiling durchführen,,,,,,,,,,,,,,,,,,,,,,,,,*,*,,,,,,,,,,,,,,0,Dieselbe Messungen wir bei Nano,Nicht gestartet,SH,,,,,,
-,NVIDIA Xavier Hardware Profiling durchführen,,,,,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,0,Dieselbe Messungen wir bei Nano,Nicht gestartet,SH,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WP1.2.2,ARM Profiling,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,11-01-20,,,0,,,MI,,,running,D1.2.2,,1
-,ARM (Raspberry) HW Optimierungen untersuchen,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,,,4,0,"Settings für CPU -> Latenz, Power und Energy",,MI,,,,,,
-,ARM HW Optimierungen als Script implementieren,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,,,MI,,,,,,
-WP1.2.3,Xilinx Profiling,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,Marco,,,running,,,1
-,Xilinx HW Optimerungensoptionen untersuchen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,"Größe systosischen Array, Puffer, DSP untersuchen",Im Zuge der Arbeit von Matthias. ,Marco,,[] Studentenarbeit ausschreiben?,,,,
-,Xilinx HW Optimierungen als Script implementieren,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4,0,,,Marco,,,,,,
-WP1.2.4,Intel Profiling,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.35555555555555557,,,MI,,,running,,,3
-,OpenVino CPU Hardwareoptimierung untersuchen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4,0,"Unterschied GPU/CPU am NUC Performace, Auslastung der Cores",Bachelorarbeit ausschreiben für Latenz und Power und Energiemessungen?,AW,,,,,,
-,OpenVino Hardwareoptimierung Implementierung von Scripts auf NUC and NCS2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,"Scripts implementieren, wo man Einstellungen für min Latency, min Power oder min Energy einstellen kann",,,,,,,,
-,NCS2 Hardwareoptimierungsoptionen untersuchen,,,,,,,,,,,,,,,,,,,,,*,*,,,,,,,,,,,,,,,,,4,0.8,"Settings für min Latenz, Power und Energy",,MI,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WP1.3,Map Models of hardware,,,,,,,,,,,,,,,,,,,,,,,,,w,w,w,w,w,w,w,w,w,,,,,,,0.21186440677966098,Anforderung: Optimierungsstruktur für 4 Plattformen,,,,,,,,
-WP1.3.1,Gemeinsame Infrastruktur Hardwareschnittstelle,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.15,,,Marco,,,not started,,,3
-,EML-Process: Gemeinsame Estimatorschnittstelle aus Inferenzschnittstelle erstellen,,,,,,,,,,,,,,,,,,,*,*,,*,*,,,,,,,,,,,,,,,,2,0.3,"Das Inferenzinterface erweitern (extends) für notwendige Inputs für die Estimators; Welche Files wo in welches Format abgelegt werden, um vom Programm gefunden zu werden; Ort und Formats des Reports festlegen. WICHTIG: Diese Schnittstelle soll gleich sein wie die Schnittstelle zur echten HW","- Parser von Matthias Format vorhanden
-- Master: Datensatz in Matthias Format",Marco,,"[] Inputformate von Martin interpretieren
-[] Klären wie wir jobs nicht parallel ausführen (eventuell ohne Taskspooler) ",,,,
-,EML-Process: Startscript/Pythonschnittstelle für Inferenz an Hardwareumgebungen erstellen,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,,2,0,"Standardisierte Scripts für das Ausführen der Inferenz schreiben: Inferenz mit Bericht erhalten, definieren wo es abgelegt werden soll, welches Format.",,Marco,,"[] Infos und Scripts von Matthias und Matvey bekomme
-[] Matvey NUC Openvino installieren",,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WP1.3.2,Inferenz an NVIDIA Hardware ermöglichen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.125,,,AM,,,running,D1.3.1: Inferenzbericht,,1
-,"Inferenz NVIDIA: Inferenzmodul für alle NVIDIA Geräte erstellen für Latenz, Accuracy und Throughput und Timings erstellen",,,,,,,,,,,,,,,,,,,,,,*,*,,,,,,,,,,,,,,,,4,0.2,"Es soll Pytorch und TF ausführen können, Bericht im richtigen Format zurückgeben, wenn Daten und Modell bekannt sind. Gesammelt soll Netzlatenz, Layer und total, Throughput, Accuary oder IoU wenn Bilder verwendet werden, Zeit fürs Laden der Inferenzdaten, Gesamtinferenzzeit",Priorität!,AM,,,,,,
-,Inferenz NVIDIA: Inferenzmodul für Xavier aufsetzen mit Pytorch und TF 2.3,,,,,,,,,,,,,,,,,,,,,,*,*,,,,,,,,,,,,,,,,1,0.2,"Images herunterladen und aufsetzen, TF und Pytorch letzte Versionen. Inferenzmodul mit Bericht notwendig","Priorität!
-*Dockerimages noch offen
-*OpenCV auf Xavier",AM,,"[] Tests der Images
-[x] Xavier am Router hängen
-[] TF2-Saved_Model + h5-Modelle zu tensorrt konvertieren
-[] Inferenz mit tensorrt und Bilder",,,,
-,Inferenz NVIDIA: Inferenzmodul für TX2 aufsetzen mit Pytorch und TF 2.3,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,,1,0,"Images herunterladen und aufsetzen, TF und Pytorch letzte Versionen. Inferenzmodul mit Bericht notwendig",Priorität!,AM,,,,,,
-,Inferenz NVIDIA: Inferenzmodul für Nano aufsetzen mit Pytorch und TF 2.3,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,,1,0,"Images herunterladen und aufsetzen, TF und Pytorch letzte Versionen. Inferenzmodul mit Bericht notwendig",Priorität!,AM,,,,,,
-,Inferenz NVIDIA: Standardisierte Startscripts für NVIDIA Containers/Umgebungen erstellen,,,,,,,,,,,,,,,,,,,,,,*,*,,,,,,,,,,,,,,,,1,0,"Standardisierte Scripts für das Ausführen der Inferenz schreiben: Inferenz mit Bericht erhalten, definieren wo es abgelegt werden soll, welches Format",,AM,,[] Dockerscript erstellen,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WP1.3.3,Inferenz an Intelgeräte ermöglichen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.91249999999999998,,,MI,,,running,D1.3.1: Inferenzbericht,,2
-,Inferenz Intel: Inferenzmodul für alle OpenVinogeräte erstellen,,,,,,,,,,,,,,,,,,,,,,*,*,*,,,,,,,,,,,,,,,4,1,"Es soll Pytorch und TF ausführen können, Bericht im richtigen Format zurückgeben, wenn Daten und Modell bekannt sind. Gesammelt soll Netzlatenz, Layer und total, Throughput, Accuary oder IoU wenn Bilder verwendet werden, Zeit fürs Laden der Inferenzdaten, Gesamtinferenzzeit",,MW,,,,,,
-,Inferenz Intel: Inferenzstart Script für Openvino erstellen,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,,,1,0.3,,Priorität!,AW,,[] Mit einem Netz testen,,,,
-,Inferenz Intel: Dockerimages/Umgebungen für Intel NUC aufsetzen mit Pytorch und TF 2.3,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,,,3,1,"Images herunterladen und aufsetzen, TF und Pytorch letzte Versionen. Inferenzmodul mit Bericht notwendig",,MW,,,,,,
-WP1.3.4,Inferenz an ARM ermöglichen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.10000000000000002,,Welche Hardware noch wollen wir für Inferenz?,MI,,,running,D1.3.1: Inferenzbericht,,1
-,Inferenz Edge TPU: Inferenzmodul für Google Coral Stick erstellen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,"Es soll Pytorch und TF ausführen können, Bericht im richtigen Format zurückgeben, wenn Daten und Modell bekannt sind. Der Coral stick könnte am NUC hängen und über den NUC angesteuert werden",Pausiert,,,"[] Edge TPU an NUC anhängen und zum Laufen zu bringen
-[] Inference scripts wie aus OpenVino vorbereiten",,,,
-,Inferenz ARM Processor für TF und Pytorch ermöglichen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3,0.1,,,MI,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WP1.3.4,Inferenz an Xilinx ermöglichen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.15,,Welche Hardware noch wollen wir für Inferenz?,MI,,,running,D1.3.1: Inferenzbericht,,1
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,Inferenz Xilinx Processor für TF und Pytorch ermöglichen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4,0.3,Inferenz am Xilinx machen. Vitis Software aufsetzen,,Marco,,[] Vitis installieren,,,,
-,Inferenz Xilinx durch NVIDIA NVDLA Inferenz ermögichen auf einer Xilinx-Plattform,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4,0,,,MW,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WP1.3.5,Powermessungen für NCS2 und NVIDIA ermöglichen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,8.7500000000000008E-2,,,MI,,,running,,,2
-,Powermessungen von NCS2 möglich,,,,,,,,,,,,,,,,,,,,,,*,*,,,,,,,,,,,,,,,,3,0.2,Setup für Hardwaremessungen am NCS2 vorhanden,Checken welche DAC-Karte wir brauchen,MI,,"[] MI DAC Karte aussuchen
-[] Rechner mit DAC-Karte aufsetzen (PCI)",,,,
-,Softwareinterface für Powermessungen fertig,,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,3,0,Softwaresteuerung für die Messung,,MI,,,,,,
-,Powermessungen von Jetson Nano möglich,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,,,3,0.5,,Stephan Hollys Messmethode,MI,,[] Messmethode,,,,
-,Softwareinterface für Powermessungen am NVIDIA-Geräte erstellen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3,0,,,,,,,,,
-,Powermessungen ARM Raspberry PI ermöglichen,,,,,,,,,,,,,,,,,,,,,,,,,*,*,*,,,,,,,,,,,,3,0,,,MI,,,,,,
-,Softwareinterface für Powermessungen am Raspberry PI erstellen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3,0,,,MI,,,,,,
-,Powermessungen Xilinx ermöglichen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3,0,,,MW,,,,,,
-,Softwareinterface für Powermessungen am Xilinx erstellen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3,0,,,MW,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WP1.3.6,Systemintegration,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,AW,,,not started,,,3
-,"Demonstration Inferenz eines SSDMobileNetV3 auf Xavier, NCS2 und ANETTE und Neural Power",,,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,2,0,"Ergebnis 6 Latenzen + Layerzeiten geschätzt und wirklich, 2 wirkuche, 4 geschätzte",,AW,,,,,,
-,Dokumentation aller erzeugten Modulen und Open Source,,,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,2,0,"Modul aufsetzen, Requirement.txt, Doku schreiben, Code und Doku auf Github legen",,AW,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WP2.1,Quantization,,,,,,,,,,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,,,,,,,,,,,,,,,,0.15000000000000002,,Wollen wir weitere Quantisierungen anschauen?,,,,,,,
-WP2.1.1,HW unabhängige Quantization,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.39999999999999997,,,MW,,,,,,3
-,Algorithmus von Dominik (Quantization) fertigstellen,,,,,,,,,,,,,,,,*,*,*,*,*,*,*,*,d,d,,,,,,,,,,,,,,4,0.6,,"Was wird quantisiert? Weight oder alles? Mixed Quantization machen?
-- VITIS lässt sich nicht installieren",DD,,"[] Vergleich mit anderen Tools machen eigenen mit anderen Quantization Tools: VITIS
-[] Arbeit schreiben",,,,
-,Dominiks Quantizationalgorithmus als Softwarepaket erstellen,,,,,,,,,,,,,,,,,,,,,,,*,*,d,d,,,,,,,,,,,,,2,0,Interface an Algorithmus anschließen (Algoritmus als Blackbox betrachten); Algorithmus lokal demonstrieren (alles auf einem PC mit Inferenz direkt am Gerät);,,AW,,,,,,
-WP2.1.2,NVIDIA Native Quantization,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,AW,,,,,,2
-,NVIDIA Tensor-RT Quantizationmethoden untersuchen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,0,,,KK,,,,,,
-WP2.1.3,Intel Native Quantization,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,AW,,,,,,2
-,OpenVino Quantizationmethoden untersuchen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,0,,,JW,,,,,,
-WP2.1.4,Xilinx Quantization Aware Training,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.10000000000000002,,,MW,,,,,,1
-,Arbeit Slimmable Networks Adabits zusammenfügen,,,,,,,,,,,,,,,,,,,,,,,*,*,*,,,,,,,,,,,,,,3,0.1,Optimum zwischen Pruning und Quantization. Ziel: Quantization drinnen ist und Batchnormalization integriert im Netzwerk,,,,,,,,
-,"Evaluieren mit unterschiedlichen Einstellungen, Pareto Opt finden",,,,,,,,,,,,,,,,,,,,,,,,,,*,*,*,,,,,,,,,,,3,0,Paretooptimum finden zwischen Pruning und Quantization.,,,,,,,,
-,Welche Effekte mehr auf der HW,,,,,,,,,,,,,,,,,,,,,,,,,,,,,*,*,,,,,,,,,2,0,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WP2.2,Pruning,,,,,,,,,,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,,,,,,,,,,,,,,,,0.30714285714285711,,Welche andere Pruningmethoden wollen wir anschauen?,,,,,,,
-WP2.2.1,Distiller HW unabhängiges Pruning,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.66666666666666663,,,MI,,,,,,3
-,Algorithmus von Andreas (Pruning) fertigstellen und einschließen,,,,,,,,,,,,,,,,,,*,*,*,*,*,d,d,,,,,,,,,,,,,,,5,0.8,,,AG,,,,,,
-,Andreas Pruningalgorithmus als Softwarepaket erstellen,,,,,,,,,,,,,,,,,,,,,,,*,*,d,,,,,,,,,,,,,,1,0,Interface an Algorithmus anschließen (Algoritmus als Blackbox betrachten); Algorithmus lokal demonstrieren (alles auf einem PC mit Inferenz direkt am Gerät);,,AW,,,,,,
-WP2.2.2,Netzoptimierung durch slimmable Networks,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3.7499999999999999E-2,,,AW,,,,,,2
-,Reproduce results on MobileNet2,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,,1,0.3,"Download code from repository https://github.com/JiahuiYu/slimmable_networks, let examples run locally on ICT Server, reproduce the results on the provided MobileNetV2 on ImageNet Subset, read and understand papers, research accuracy & latency measure options, Quantization methods ",,KK,,,,,,
-,Setup tensor-rt on NVIDIA Jetson Nano,,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,1,0,,,KK,,,,,,
-,Experiment on MobileNetV2,,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,1,0,On Jetson Nano,,KK,,,,,,
-,Experiment on Slimmed MobileNetV2,,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,1,0,"Slimmable networks, universally slimmable networks, autoslim on Jetson Nano",,KK,,,,,,
-,Experiment on quantized MobileNetV2,,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,1,0,,,KK,,,,,,
-,Experiment on quantized slimmed MobileNetV2,,,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,1,0,,,KK,,,,,,
-,Explore how to implement latency optimization,,,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,1,0,how to implement hardware aware latency optimizations for slimmable MobileNetV2,,KK,,,,,,
-,Evaluate performance and latency of different nw,,,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,1,0,"MobileNetV2, 3 Slimmable MobileNetV2 versions, quantized and or slimmed versions",,KK,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WP2.3,Factorization,,,,,,,,,,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,,,,,,,,,,,,,,,,0,,Hier haben wir nichts. Was machen wir? ,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,5,0,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WP2.4,Compact Design,,,,,,,,,,,,,,,w,w,w,w,w,w,w,w,w,w,w,w,,,,,,,,,,,,,,0.48846153846153845,,,,,,,,,
-WP2.4.1,Shuntconnections für MobileNet,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.6166666666666667,,,BH,,,,"D2.4.1.1, D2.4.1.2",,1
-,Algorithmus von Bernhard (Shuntconnections) fertigstellen,,,,,,,,,,,,,,,,,,,*,*,*,*,*,*,*,,,,,,,,,,,,,,5,0.7,,"*Imagenet dauert zu lange (10h). Eine Epoche 30min
-*Finetuning war erfolgreich, Knowledge Distillation abgeschlossen
-*Imagenet 3% geringer als vortrainiertes Netz (68% statt 71%). Preprocessing unklar. Mit der richtigen Config sollte es passen
-*Testbereit Anfang Dezember",BH,,"[x] GPU-Erweiterung auf 2 GPUs: Funktioniert
-[x] Finetuning auf Imagenet
-[] Übertragen auf Deeplab
-[] Inference on NVIDIA HW
-[] Inference on Intel-HW
-[] Inference on Raspberry PI (Only CPU)
-[] Thesis written",,D2.4.1.1,,
-,Bernhards Algorithmus als Softwarepaket erstellen,,,,,,,,,,,,,,,,,,,,,,,,,,*,*,,,,,,,,,,,,1,0.2,Interface an Algorithmus anschließen (Algoritmus als Blackbox betrachten); Algorithmus lokal demonstrieren (alles auf einem PC mit Inferenz direkt am Gerät);,,BH,,,,D2.4.1.2,,
-WP2.4.2,SqueezeNas Modelle trainieren,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.6,,,AM,,,,,,2
-,Raildatenset für Training am Server aufbereiten,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,1,,,AM,,,,,,
-,Metriken und Scripts für IoU-Messungen beim Inferenz erstellen,,,,,,,,,,,,,,,,,,,,,*,*,*,,,,,,,,,,,,,,,,2,0.2,IoU berechnen. Visualisierung davon,,AM,,[] Script für IoU und Visualisierung erstellen,,,,
-,"SqueezeNas Modelle M, L, XL mit Raildatenset trainieren",,,,,,,,,,,,,,,,,,,,,*,*,*,,,,,,,,,,,,,,,,4,0.6,3 fertige Netzstrukturen für Xavier für Segmentationsnetze. Alle Modelle soll mit dem Raildatenset trainiert werden,"*Trainieren geht
-*Gute IoU fehlt (15%, soll 50%-70%). Man soll mit MobileNet DeepLab trainieren
-*DeepLab wird getestet, laufend als Vergleich
-*",AM,,"[] Trainieren auf dem Server
-[] MobileNet + DeepLab als Referenz trainieren
-[] Herausfinden warum IoU schlecht ist",,,,
-WP2.4.3,Gemeinsamer Backbone für semantic und instance Segmentation,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.35000000000000003,,Welche Aufgaben stehen bevor?,HB,,,,,,3
-,Selection of state-of-the-art CNNs,,,,,,,,,,,,,,,,,,,,,*,*,,,,,,,,,,,,,,,,,2,1,"Networks: MobileNetV1[3], MobileNetV2[12], MobileNetV3[2] and EfficientNet[14].",*Standardnetze mit oder ohne Optimierungen wie Shunt?,HB,,[] Ein Netz auswählen,,,,
-,Establishing of Baseline ,,,,,,,,,,,,,,,,,,,,,*,*,,,,,,,,,,,,,,,,,2,0.8,two networks for both object detection (with bounding boxes) and semantic segmentation will be built and trained separately.,,HB,,,,,,
-,Train/test the CNN for Object Detection,,,,,,,,,,,,,,,,,,,,,,,*,*,,,,,,,,,,,,,,,2,0.3,For this fine-tuning or training the RailSem19[15] data set will be used.,,HB,,,,,,
-,"Freezing the encoder, train/test/ fine-tune the segmentation CNN ",,,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,2,0,SDD trained. Segmentation CNN head will be trained using the feature maps from the encoder. Use RailSem19. Approach of having a shared encoder for both networks.,,HB,,,,,,
-,Simultaneous train/test both networks ,,,,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,2,0,Unified loss function and evaluation metric will be defined.,*Könnte man hier den Panoptic Segmentation Metric verwenden = F1(Det. RQ) * mean(IoU)(Seg. Q)?,HB,,,,,,
-,Comparison and evaluation ,,,,,,,,,,,,,,,,,,,,,,,,,,,*,*,,,,,,,,,,,2,0,"Various settings: Different network models, hyper-parameters, and number of classes. Impact on runtime and accuracy will be evaluated. Latenz und Genauigkeit im Inference lösen",,HB,,[] Paper aus der Arbeit machen,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WP2.5,Optimization Strategy,,,,,,,,,,,,,,,,,,,,,,w,w,w,w,w,w,w,w,w,w,w,w,,,,,,,0.38188679245283014,,Target Plattform wäre Xilinx. Das haben wir noch nicht. Was machen wir?,,,,,,,
-WP2.5.1,Trainingsserver EDA01 einrichten,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.96,,,AM,,,,,,2
-,Dockercontainer(s) mit Tensorflow 2.3 und Pytorch für EDA01 einrichten,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,,,,2,1,"Container einrichten, Pfade für Modelle, Daten und Parameter festlegen",Statt Container venv verwenden,AM,,,,,,
-,Startscripts für Containers/Trainingsumgebungen erstellen,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,,,1,1,Standardisierte Scripts fürs Steuern der Containers. Hinzufügen von Jobs zum Task Scheduler,"Frage ob noch offen nachdem wir ohne Containers trainieren können?
-*Nur 1 GPU verwendet. Besser wäre beide GPUs.
-*Andreas verwendet 2 GPUs, default in Pytorch?",BH,,[] In TF beide GPUs verwenden,,,,
-,Demonstration der Funktionsweise von Environments/Containers,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,,1,1,"Pytorch und TF Netzwerk aussuchen, z.B. MobileNetV2, Daten zum trainieren besorgen, z.B. Imagenet, Training mit Task spooler für beide Netze sequentiell ausführen, trainierte Modelle herunterladen",,BH,,,,,,
-,Dokumentation des Aufsetzens und Bedienung des Trainings machen,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,,1,0.8,"Die Arbeit dokumentieren, so dass andere es reproduzieren können und anwenden können",Doku von Marco ergänzen,BH,,,,,,
-WP2.5.2,Externes Training einrichten,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.2,,,MW,,,,,,2
-,Amazon AWS für Training einrichten,,,,,,,,,,,,,,,,,,,,,,,,,,,*,*,,,,,,,,,,,2,0,"Umgebung oder Container einrichten, um auf Amazon auch trainieren zu können. Ergebnis: Script, womit man wie beim EDA trainieren kann","Nicht angefangen, optional",AW,,,,,,
-,Vienna Scientific Cluster für Training einrichten,,,,,,,,,,,,,,,,,,,,,*,*,,,,,,,,,,,,,,,,,2,0.4,"Zugriff auf dem Scientific Cluster. Aufgabe fertig, wenn Bernhard darauf erfolgreich trainiert hat",Falsche Libs installiert,BH,,"[x] AW richtet Konto ein
-[] Demo durch Bernhard",,,,
-WP2.5.3,Messdatenbank für Messungen im Labor einrichten,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,AW,,,,,,3
-,TU Server für Datenbank aufsetzen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,Server von Daniel bekommen mit geeigneter Software,,AW,,,,,,
-,Datenbankschema und Technologie auswählen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,z.B. PostgreSQL; Schema aus den Inferenzberichten erstellen; ,,AW,,,,,,
-,Datenbankschnittstelle erstellen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,Scripts erstellen; Services für Datenbankzugriff öffnen;,,AW,,,,,,
-,Datenbankbetrieb demonstrieren,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,"Demonstrieren mit einem Netz, das auf Xavier Inferenz ausführt und die Metadaten + Ausführungslatenz speichert",,AW,,,,,,
-WP2.5.4,EML-Prozess automatisieren und vereinfachen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,AW,,,,,,3
-,Softwaremodul für Schnittstelle Geräte zu Pythonsoftware schreiben,,,,,,,,,,,,,,,,,,,,,,,*,*,,,,,,,,,,,,,,,3,0,"Pythonmethoden für einheitliches Ausführen von Latenzmessungen an Hardware, wo IP bekannt ist und Typ. Einbindung von Protokollen und Parsern",,Marco,,,,,,
-,Gemeinsame Schnittstelle der Optimierungsalgorithmen definieren,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,,3,0,Herausfinden wie Inputs und Outputs aussehen; Bedarf nach Retraining und Inferenz auf einem Gerät ermitteln; Schnittstelle definieren; Implementierungstechnologie wählen (Docker?),,AW,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WP2.5.5,Applikation: Traffic Light System,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,8.5714285714285729E-2,,,AW,,,,,,2
-,"Netzwerke, Optimierungsalgorithmen und Testhardware defineren",,,,,,,,,,,,,,,,,,,,,,,*,*,,,,,,,,,,,,,,,3,0.2,"Festlegen welche Netzwerke angeschaut werden, MobileNetV1,2,3, Auflösungen und Depth zu testen. HW festlegen: NUC, NCS2, NVIDIA alle Plattformen. Alle Netzwerke sollen in Netron darstellbar sein",* Netze noch nicht in Netron darstellbar,AW,,[] TF2 frozen zu mmdnn konvertieren,,,,
-,Tests durchführen,,,,,,,,,,,,,,,,,,,,,,,,,*,*,,,,,,,,,,,,,2,0,"Alle Netze, Plattformen und Algorithmen durchführen",,AW,,,,,,
-,Ergebnisse interpretieren,,,,,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,2,0,"Visualisierung, beste Kombination ermitteln",,AW,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WP2.5.6,Applikation: Ragweederkennung über eine Drohne,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.45333333333333337,,,LS,,,,,,3
-,Datensammlung,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,,,,2,1,,,LS,,,,,,
-,Daten labeln,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,,,,2,1,videos dabei overlapping croppen.,"Alle Daten nicht gelabelt, aber es ist genug da. Jedes Format kann exportieren",LS,,,,,,
-,Objektdetector-Modelle trainieren,,,,,,,,,,,,,,,,,,,,,,*,*,*,,,,,,,,,,,,,,,2,0.7,,[] Ground Truth in Tensorboard darstellen,LS,,[] Das beste Baselinemodell finden und trainieren,,,,
-,Deployment auf Embedded Devices,,,,,,,,,,,,,,,,,,,,,,,,*,*,,,,,,,,,,,,,,2,0.02,,,LS,,,,,,
-,Messungen der Leistung und des Energieverbrauchs der verschiedenen Modelle auf den verschiedenen Devices ,,,,,,,,,,,,,,,,,,,,,,,,*,*,,,,,,,,,,,,,,2,0,,,LS,,,,,,
-,Zusammenfassung der Ergebnisse und verfassen der Diplomarbeit,,,,,,,,,,,,,,,,,,,,,,,,,*,*,*,,,,,,,,,,,,2,0,,,LS,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WP2.5.7,Applikation: Minicar Demonstrator,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.93333333333333335,,,MI,,,,D2.5.7,,3
-,Stabil laufende Objekterkennung im Stream,,,,,,,,,,,,,,,,,,,,,*,*,d,,,,,,,,,,,,,,,,4,1,,"- Steuerung fertig. Neue Version verzögert die Entwicklung
-- Das Fahren geht gut",MI,,,,,,
-,Software Switch für Netzwerke/Modi,,,,,,,,,,,,,,,,,,,,,,*,*,d,,,,,,,,,,,,,,,1,0.4,,- Flask einsetzen,MI,,[] Flask mit Subprozessen aufsetzen,,,,
-,Inferenz am RPi laufen lassen (tflite conversion + inference) + Video drehen,,,,,,,,,,,,,,,,,,,,,,,*,*,d,,,,,,,,,,,,,,4,1,Video drehen mit Inferenz,"Object Detection braucht andere Frontend, Yolo anderes Frontend MobileNet. Inferenz mit Tflite geht (nur classification). Tflite Yolov3 Tiny geht. Langsam",MI,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WP2.5.8,Applikation: TFLite Netz auf einem Handy,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3.3333333333333333E-2,,,TK,,,,,,3,,,
-,Netz zu TFLite umwandeln,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,,1,0.2,,- SSD-MobileNetV2 auf Coco trainiert wird,,,,,,,,,,
-,Androidapp entwickeln,,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,,3,0,,,,,,,,,,,,
-,Bericht erstellen  - Ausführungszeiten,,,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,,1,0,,,,,,,,,,,,
-,Demonstrieren wie man ein vortrainiertes Netz auf das Telefon bringen kann,,,,,,,,,,,,,,,,,,,,,,,,,,*,,,,,,,,,,,,,1,0,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,Formatting,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,Task *,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,Workpackage w,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,Subtask s,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,Delayed d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,Prolonged p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,, ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,Offiziellen Milestones,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,M1.1: Estimation techniqe,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,M1.2: Optimization technique,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,M1.3: Design flow,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,MS2.1 Compression Technique Performance Comparison,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,MS2.2 Design Methodology,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,MS2.3 Design & Optimization Methodology,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,"MS3.1 Preliminary Dataset, Baseline",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,MS3.2 On-line Learning System,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,Submilesontes,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,Deliverables,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Row,WP ID,Titlee,Start Date,End Date,Description,Responsible,Student,Links,State
+7,WP1.1.1,State of the Art Latency und Power Estimation Modelle aufsetzen,09/ 1/2020,10/30/2020,Setup Neural Power latency and power estimation model,Marco,,,closed
+10,WP1.1.2,Estimatormethode Blackthorn (Martin) für Latenz (NVIDIA),,,,ML,,,running
+14,WP1.1.3,"Estimatormethode ANETTE für Latenz (Intel, ARM, Xilinx)",,,,MW,,,running
+21,WP1.1.4,Estimation von Power durch Whitboxmodell,,,,CK,,,cancelled
+24,WP1.1.5,Estimation von Power durch ANETTE,,,,MW,,,running
+29,WP1.1.6,Estimation Resources,,,,ML,,,not started
+34,WP1.2.1,NVIDIA Profiling,03/ 1/2020,,"HW settings profiling of NVIDIA Xavier, Jetson Nano (Bachelor thesis) and TX2",AW,SH,,running
+40,WP1.2.2,ARM Profiling,11/ 1/2020,,,MI,,,running
+43,WP1.2.3,Xilinx Profiling,,,,Marco,,,running
+46,WP1.2.4,Intel Profiling,,,,MI,,,running
+53,WP1.3.1,Gemeinsame Infrastruktur Hardwareschnittstelle,,,,Marco,,,not started
+57,WP1.3.2,Inferenz an NVIDIA Hardware ermöglichen,,,,AM,,,running
+64,WP1.3.3,Inferenz an Intelgeräte ermöglichen,,,,MI,,,running
+68,WP1.3.4,Inferenz an ARM ermöglichen,,,,MI,,,running
+72,WP1.3.4,Inferenz an Xilinx ermöglichen,,,,MI,,,running
+77,WP1.3.5,Powermessungen für NCS2 und NVIDIA ermöglichen,,,,MI,,,running
+87,WP1.3.6,Systemintegration,,,,AW,,,not started
+93,WP2.1.1,HW unabhängige Quantization,,,,MW,,,
+96,WP2.1.2,NVIDIA Native Quantization,,,,AW,,,
+98,WP2.1.3,Intel Native Quantization,,,,AW,,,
+100,WP2.1.4,Xilinx Quantization Aware Training,,,,MW,,,
+107,WP2.2.1,Distiller HW unabhängiges Pruning,,,,MI,,,
+110,WP2.2.2,Netzoptimierung durch slimmable Networks,,,,AW,,,
+127,WP2.4.1,Shuntconnections für MobileNet,,,,BH,,,
+130,WP2.4.2,SqueezeNas Modelle trainieren,,,,AM,,,
+134,WP2.4.3,Gemeinsamer Backbone für semantic und instance Segmentation,,,,HB,,,
+143,WP2.5.1,Trainingsserver EDA01 einrichten,,,,AM,,,
+148,WP2.5.2,Externes Training einrichten,,,,MW,,,
+151,WP2.5.3,Messdatenbank für Messungen im Labor einrichten,,,,AW,,,
+156,WP2.5.4,EML-Prozess automatisieren und vereinfachen,,,,AW,,,
+161,WP2.5.5,Applikation: Traffic Light System,,,,AW,,,
+166,WP2.5.6,Applikation: Ragweederkennung über eine Drohne,,,,LS,,,
+174,WP2.5.7,Applikation: Minicar Demonstrator,,,,MI,,,
+179,WP2.5.8,Applikation: TFLite Netz auf einem Handy,,,,TK,,,
