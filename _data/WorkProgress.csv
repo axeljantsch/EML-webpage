@@ -1,4 +1,4 @@
-Row,WP ID,Title,Start Date,End Date,Description,Responsible,Student,Links,State,Prio
+Row,WP ID,Titlee,Start Date,End Date,Description,Responsible,Student,Links,State,Prio
 7,WP1.1.1,State of the Art Latency und Power Estimation Modelle aufsetzen,09/ 1/2020,10/30/2020,Setup Neural Power latency and power estimation model,Marco,,,closed,
 10,WP1.1.2,Estimator Blackthorn for Latency (NVIDIA),10/ 1/2019,,Model based latency estimator method,ML,ML,,running,1
 14,WP1.1.3,"Estimator method ANETTE for Latency (Intel, ARM, Xilinx)",10/ 1/2019,,Statistic and model based latency estimator method  ,MW,MW,,running,1
